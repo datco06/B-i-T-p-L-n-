@@ -1,0 +1,715 @@
+/* Reset một số style mặc định */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  padding-top: 70px; /* Cho header cố định */
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: #333;
+}
+
+main {
+  flex-grow: 1;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Font đẹp hơn cho tiêu đề */
+}
+
+/* === HEADER STYLES (Giữ nguyên từ trước) === */
+header {
+  background-color: #e6f2ff;
+  padding: 15px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 40px;
+  vertical-align: middle;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin-left: 150px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #0077b6;
+}
+
+.taikhoan {
+  display: flex;
+  gap: 15px;
+}
+
+.taikhoan button {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s, opacity 0.3s;
+}
+
+.taikhoan button a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.taikhoan button:first-child {
+  background-color: #0077b6;
+  color: white;
+}
+
+.taikhoan button:last-child {
+  background-color: #0077b6;
+  color: white;
+}
+
+.taikhoan button:hover {
+  opacity: 0.9;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 30px;
+}
+
+.logo h3 {
+  font-size: 25px;
+  color: #1c61ad;
+  margin: 0;
+}
+
+/* === NEW: TRAIN PAGE BANNER STYLES === */
+.train-page-banner {
+  position: relative;
+  width: 100%;
+  height: 450px; /* Điều chỉnh chiều cao nếu cần */
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+.train-page-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Đảm bảo ảnh che phủ toàn bộ banner */
+  filter: brightness(0.7); /* Làm ảnh tối hơn một chút để chữ nổi bật */
+}
+.train-page-banner .train-banner-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  width: 80%;
+  max-width: 700px;
+}
+.train-page-banner .train-banner-overlay h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+.train-page-banner .train-banner-overlay p {
+  font-size: 18px;
+  line-height: 1.6;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* === MAIN CONTENT STYLES FOR TRAIN TICKET BOOKING PAGE === */
+.train-ticket-booking-page .container {
+  max-width: 1100px; /* Tăng độ rộng container */
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 30px 40px; /* Tăng padding */
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.train-ticket-booking-page h1 {
+  text-align: center;
+  color: #1c61ad;
+  margin-bottom: 10px; /* Giảm margin */
+  font-size: 30px;
+}
+.train-ticket-booking-page h1 i {
+  margin-right: 10px;
+}
+
+.train-ticket-booking-page .page-intro {
+  text-align: center;
+  color: #555;
+  margin-bottom: 40px;
+  font-size: 17px;
+}
+
+/* Train Search Form Styles (Giữ nguyên và cải tiến) */
+.train-search-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  background-color: #f0f8ff; /* Nền xanh nhạt cho form */
+  padding: 30px;
+  border-radius: 8px;
+  margin-bottom: 50px; /* Khoảng cách với phần sau */
+  border: 1px solid #cce0ff;
+}
+
+.train-search-form .form-row {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.train-search-form .input-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: calc(50% - 12.5px);
+}
+
+.train-search-form .input-group label {
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+  font-size: 15px;
+}
+.train-search-form .input-group label i {
+  margin-right: 8px;
+  color: #0077b6;
+  width: 20px;
+  text-align: center;
+}
+
+.train-search-form .input-group input[type="text"],
+.train-search-form .input-group input[type="date"],
+.train-search-form .input-group input[type="number"],
+.train-search-form .input-group select {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  width: 100%;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.train-search-form .input-group input:focus,
+.train-search-form .input-group select:focus {
+  border-color: #0077b6;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.2);
+}
+
+.train-search-form .search-button {
+  padding: 14px 30px;
+  background-color: #ff6f00; /* Màu cam nổi bật */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+  align-self: center;
+  margin-top: 15px;
+}
+.train-search-form .search-button i {
+  margin-right: 8px;
+}
+.train-search-form .search-button:hover {
+  background-color: #e66000; /* Màu cam đậm hơn khi hover */
+  transform: translateY(-2px);
+}
+
+/* === NEW: Train Offers Section === */
+.train-offers-section {
+  margin-bottom: 50px;
+}
+.train-offers-section h2 {
+  text-align: center;
+  font-size: 26px;
+  color: #1c61ad;
+  margin-bottom: 30px;
+  position: relative;
+  padding-bottom: 10px;
+}
+.train-offers-section h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #ff6f00;
+}
+.train-offers-section h2 i {
+  margin-right: 10px;
+}
+
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+.offer-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.offer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.offer-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.offer-card .offer-content {
+  padding: 20px;
+}
+.offer-card .offer-content h3 {
+  font-size: 20px;
+  color: #005a8e;
+  margin-bottom: 10px;
+}
+.offer-card .offer-content h3 i {
+  color: #ff6f00;
+  margin: 0 5px;
+}
+.offer-card .offer-content p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+.btn-offer {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0077b6;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+.btn-offer i {
+  margin-left: 5px;
+}
+.btn-offer:hover {
+  background-color: #005a8e;
+}
+
+/* === NEW: Why Choose Train Section === */
+.why-choose-train {
+  margin-bottom: 50px;
+  background-color: #f0f8ff;
+  padding: 40px;
+  border-radius: 8px;
+}
+.why-choose-train h2 {
+  text-align: center;
+  font-size: 26px;
+  color: #1c61ad;
+  margin-bottom: 30px;
+}
+.why-choose-train h2 i {
+  margin-right: 10px;
+}
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  text-align: center;
+}
+.benefit-item {
+  padding: 20px;
+}
+.benefit-item .benefit-icon {
+  font-size: 40px;
+  color: #0077b6;
+  margin-bottom: 15px;
+  display: inline-block;
+  background-color: white;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.benefit-item h3 {
+  font-size: 18px;
+  color: #005a8e;
+  margin-bottom: 10px;
+}
+.benefit-item p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Train Info Sections (Popular Routes & Tips - Enhanced) */
+.train-info-sections {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.train-info-sections section {
+  background-color: #e6f2ff;
+  padding: 25px;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 280px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.train-info-sections h2 {
+  color: #1c61ad;
+  margin-bottom: 20px;
+  font-size: 22px;
+  border-bottom: 2px solid #cce0ff;
+  padding-bottom: 10px;
+}
+.train-info-sections h2 i {
+  margin-right: 10px;
+}
+
+.train-info-sections ul {
+  list-style: none;
+  padding-left: 0;
+  color: #333;
+}
+.train-info-sections ul li {
+  margin-bottom: 12px;
+  padding-left: 0; /* Remove previous padding if any */
+  position: relative;
+  font-size: 15px;
+  display: flex; /* Align icon and text */
+  align-items: flex-start;
+}
+
+.train-info-sections ul li i {
+  color: #0077b6;
+  margin-right: 10px;
+  margin-top: 3px; /* Align icon nicely */
+  width: 18px;
+}
+
+.train-info-sections section.train-travel-tips p {
+  text-align: left;
+  color: #333;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+  padding-left: 0; /* Remove previous padding if any */
+  position: relative;
+  display: flex; /* Align icon and text */
+  align-items: flex-start;
+}
+.train-info-sections section.train-travel-tips p i {
+  color: #28a745; /* Green color for check icon */
+  margin-right: 10px;
+  margin-top: 4px; /* Align icon nicely */
+  width: 18px;
+}
+.text-green {
+  color: #28a745 !important;
+}
+
+/* === NEW: Testimonials Section === */
+.train-testimonials {
+  margin-bottom: 30px;
+}
+.train-testimonials h2 {
+  text-align: center;
+  font-size: 26px;
+  color: #1c61ad;
+  margin-bottom: 30px;
+  position: relative;
+  padding-bottom: 10px;
+}
+.train-testimonials h2::after {
+  /* Consistent underline for section titles */
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #ff6f00;
+}
+.train-testimonials h2 i {
+  margin-right: 10px;
+}
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+.testimonial-card {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  border-left: 5px solid #0077b6;
+}
+.testimonial-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #e6f2ff;
+}
+.testimonial-card p {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+.testimonial-card h4 {
+  font-size: 17px;
+  color: #005a8e;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.testimonial-card .stars {
+  color: #ffc107; /* Gold color for stars */
+  font-size: 18px;
+}
+.testimonial-card .stars i {
+  margin: 0 2px;
+}
+
+/* === FOOTER STYLES (Giữ nguyên từ trước) === */
+/* Add or modify these styles in your CSS file */
+
+footer {
+  background-color: #222222; /* Very dark grey, as seen in the image */
+  color: #ffffff; /* White text for overall footer */
+  padding-top: 30px; /* Padding at the top of the footer */
+  padding-bottom: 30px; /* Padding at the bottom of the footer */
+  /* margin-top: 100px; */ /* This was on .chan, consider if still needed or if footer padding is enough */
+}
+
+.chan {
+  display: flex;
+  gap: 40px; /* Adjust gap between columns as needed */
+  justify-content: space-around;
+  padding: 20px 5%; /* Inner padding for the content area */
+  flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+  /* margin-top: 100px; */ /* Removed as footer now has padding, was potentially excessive */
+}
+
+.chan1,
+.chan2,
+.chan3,
+.chan4 {
+  line-height: 1.6; /* More standard line height */
+  /* margin-top: 60px; */ /* This was quite large, consider reducing or removing if .chan padding is sufficient */
+  margin-top: 20px;
+  flex: 1; /* Allow columns to grow */
+  min-width: 200px; /* Minimum width before wrapping */
+}
+
+.chan h3 {
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 20px; /* Space below column titles */
+  font-size: 16px; /* Adjust title size as preferred */
+}
+
+.chan ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.chan ul li {
+  margin-bottom: 12px; /* Space between list items */
+  font-size: 14px;
+  color: #dddddd; /* Slightly dimmer white for list items */
+}
+
+/* Styling for links within footer lists */
+.chan ul li a {
+  color: #dddddd;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.chan ul li a:hover {
+  color: #007bff; /* Example hover color, or your site's accent color */
+  text-decoration: underline;
+}
+
+/* Specific styling for THÔNG TIN LIÊN HỆ icons */
+.chan1 ul li {
+  display: flex;
+  align-items: flex-start; /* Align items to the start, useful if text wraps */
+}
+
+.chan1 ul li i {
+  margin-right: 10px; /* Space between icon and text */
+  color: #ffffff; /* Icon color */
+  width: 18px; /* Fixed width for alignment */
+  text-align: center;
+  margin-top: 3px; /* Slight top margin to better align with text */
+}
+
+/* Styling for KẾT NỐI VỚI CHÚNG TÔI social icons */
+.chan4 .social-icons {
+  display: flex;
+  gap: 15px; /* Space between social icons */
+  margin-bottom: 25px; /* Space below social icons, before next title */
+}
+
+.chan4 .social-icons a i {
+  color: #ffffff; /* White icons */
+  font-size: 24px; /* Adjust icon size as preferred */
+  transition: color 0.3s ease;
+}
+
+.chan4 .social-icons a:hover i {
+  color: #007bff; /* Example hover color */
+}
+
+/* Styling for PHƯƠNG THỨC THANH TOÁN image */
+.chan4 .thanhtoan {
+  max-width: 250px; /* Adjust based on your image and desired size */
+  height: auto; /* Maintain aspect ratio */
+  margin-top: 10px;
+}
+
+/* Responsive adjustments (example) */
+@media (max-width: 768px) {
+  .chan {
+    flex-direction: column; /* Stack columns vertically */
+    align-items: center; /* Center columns */
+    text-align: center; /* Center text within columns */
+  }
+  .chan1 ul li {
+    justify-content: center; /* Center icon and text if column is centered */
+  }
+  .chan4 .social-icons {
+    justify-content: center; /* Center social icons */
+  }
+}
+/* === RESPONSIVE ADJUSTMENTS (Giữ nguyên và cập nhật body padding-top) === */
+@media (max-width: 992px) {
+  /* Điều chỉnh breakpoint cho container rộng hơn */
+  .train-search-form .input-group {
+    min-width: calc(50% - 12.5px); /* Vẫn 2 cột cho tablet */
+  }
+  .offers-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    margin-left: 0;
+    gap: 15px;
+    flex-direction: column; /* Nav dọc trên mobile */
+    align-items: center;
+    width: 100%;
+  }
+  header {
+    padding: 10px 3%;
+    flex-direction: column;
+    height: auto;
+    padding-top: 10px;
+  }
+  .taikhoan {
+    margin-top: 10px;
+    width: 100%;
+    justify-content: space-around;
+  }
+  body {
+    padding-top: 180px; /* Tăng padding-top cho header cao hơn khi stack */
+    /* Điều chỉnh giá trị này dựa trên chiều cao thực tế của header trên mobile */
+  }
+  .logo {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .train-page-banner {
+    height: 250px; /* Giảm chiều cao banner trên mobile */
+  }
+  .train-page-banner .train-banner-overlay h2 {
+    font-size: 28px;
+  }
+  .train-page-banner .train-banner-overlay p {
+    font-size: 16px;
+  }
+
+  .train-ticket-booking-page .container {
+    padding: 20px;
+  }
+  .train-search-form .input-group {
+    min-width: 100%; /* 1 cột trên mobile */
+  }
+  .train-info-sections {
+    flex-direction: column;
+  }
+  .chan {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .chan1,
+  .chan2,
+  .chan3,
+  .chan4 {
+    min-width: 100%;
+    margin-bottom: 30px;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+  .benefits-grid,
+  .testimonial-grid,
+  .offers-grid {
+    grid-template-columns: 1fr; /* 1 cột trên mobile */
+  }
+}

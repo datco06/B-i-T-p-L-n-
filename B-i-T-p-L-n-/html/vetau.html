@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đặt Vé Tàu Sinh Động - Travel Tour</title>
+    <link rel="stylesheet" href="/css/vetau.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="/anh/27Sep24 Simon  Free Upload  -3.png" alt="logo" />
+        <h3>TRAVEL TOUR</h3>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="/html/home.html">Home</a></li>
+          <li><a href="/html/taotour.html">Tạo Tour</a></li>
+          <li><a href="/html/khachsan.html">Khách sạn</a></li>
+          <li><a href="/html/leonui.html">Leo núi</a></li>
+          <li><a href="/html/vemaybay.html">Vé máy bay </a></li>
+          <li><a href="/html/vetau.html">Vé tàu</a></li>
+        </ul>
+      </nav>
+      <div class="taikhoan">
+        <button><a href="/html/dangnhap.html"> Đăng Nhập</a></button>
+        <button><a href="/html/dangki.html"> Đăng Ký</a></button>
+      </div>
+    </header>
+
+    <main class="train-ticket-booking-page">
+      <div class="train-page-banner">
+        <img
+          src="/anh/Gemini_Generated_Image_ku1zl0ku1zl0ku1z.png"
+          alt="Du lịch bằng tàu hỏa ngắm cảnh đẹp Việt Nam"
+        />
+        <div class="train-banner-overlay">
+          <h2>Khám Phá Việt Nam Trên Những Chuyến Tàu</h2>
+          <p>
+            Trải nghiệm hành trình đáng nhớ với dịch vụ đặt vé tàu tiện lợi, an
+            toàn và nhanh chóng.
+          </p>
+        </div>
+      </div>
+
+      <div class="container">
+        <h1><i class="fas fa-subway"></i> Đặt Vé Tàu Trực Tuyến</h1>
+        <p class="page-intro">
+          Tìm kiếm và đặt vé tàu dễ dàng cho mọi hành trình trên khắp Việt Nam
+          cùng Travel Tour.
+        </p>
+
+        <form class="train-search-form">
+          <div class="form-row">
+            <div class="input-group">
+              <label for="departure-station"
+                ><i class="fas fa-train"></i> Ga đi:</label
+              >
+              <input
+                type="text"
+                id="departure-station"
+                name="departure-station"
+                placeholder="VD: Hà Nội"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label for="arrival-station"
+                ><i class="fas fa-map-signs"></i> Ga đến:</label
+              >
+              <input
+                type="text"
+                id="arrival-station"
+                name="arrival-station"
+                placeholder="VD: Đà Nẵng"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="input-group">
+              <label for="departure-date"
+                ><i class="fas fa-calendar-alt"></i> Ngày đi:</label
+              >
+              <input
+                type="date"
+                id="departure-date"
+                name="departure-date"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label for="return-date"
+                ><i class="fas fa-calendar-alt"></i> Ngày về (Không bắt
+                buộc):</label
+              >
+              <input type="date" id="return-date" name="return-date" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="input-group">
+              <label for="passengers"
+                ><i class="fas fa-users"></i> Số lượng hành khách:</label
+              >
+              <input
+                type="number"
+                id="passengers"
+                name="passengers"
+                min="1"
+                value="1"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label for="ticket-type"
+                ><i class="fas fa-ticket-alt"></i> Loại vé:</label
+              >
+              <select id="ticket-type" name="ticket-type">
+                <option value="ngoi-mem-dieu-hoa">Ngồi mềm điều hòa</option>
+                <option value="nam-khoang-4-dieu-hoa">
+                  Nằm khoang 4 điều hòa
+                </option>
+                <option value="nam-khoang-6-dieu-hoa">
+                  Nằm khoang 6 điều hòa
+                </option>
+                <option value="ghe-phu">Ghế phụ</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="search-button">
+            <i class="fas fa-search"></i> Tìm Vé Tàu Ngay
+          </button>
+        </form>
+
+        <section class="train-offers-section">
+          <h2><i class="fas fa-tags"></i> Ưu Đãi Vé Tàu Hấp Dẫn</h2>
+          <div class="offers-grid">
+            <div class="offer-card">
+              <img
+                src="/anh/image copy 26.png"
+                alt="Ưu đãi vé tàu Hà Nội - Sapa"
+              />
+              <div class="offer-content">
+                <h3>
+                  Hà Nội <i class="fas fa-long-arrow-alt-right"></i> Sapa Chỉ Từ
+                  350.000đ
+                </h3>
+                <p>Khám phá nóc nhà Đông Dương với ưu đãi đặc biệt.</p>
+                <a href="#" class="btn-offer"
+                  >Xem Chi Tiết <i class="fas fa-chevron-right"></i
+                ></a>
+              </div>
+            </div>
+            <div class="offer-card">
+              <img
+                src="/anh/image copy 27.png"
+                alt="Ưu đãi vé tàu Đà Nẵng - Huế"
+              />
+              <div class="offer-content">
+                <h3>
+                  Đà Nẵng <i class="fas fa-long-arrow-alt-right"></i> Huế: Cung
+                  Đường Di Sản
+                </h3>
+                <p>
+                  Giảm 15% vé khứ hồi khi đặt qua Travel Tour. Ngắm cảnh đèo Hải
+                  Vân hùng vĩ.
+                </p>
+                <a href="#" class="btn-offer"
+                  >Xem Chi Tiết <i class="fas fa-chevron-right"></i
+                ></a>
+              </div>
+            </div>
+            <div class="offer-card">
+              <img
+                src="/anh/image copy 28.png"
+                alt="Ưu đãi vé tàu Sài Gòn - Nha Trang"
+              />
+              <div class="offer-content">
+                <h3>
+                  Sài Gòn <i class="fas fa-long-arrow-alt-right"></i> Nha Trang
+                  Cuối Tuần
+                </h3>
+                <p>
+                  Combo vé tàu + khách sạn giá cực tốt cho chuyến đi biển ngập
+                  nắng.
+                </p>
+                <a href="#" class="btn-offer"
+                  >Xem Chi Tiết <i class="fas fa-chevron-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="why-choose-train">
+          <h2>
+            <i class="fas fa-question-circle"></i> Tại Sao Chọn Du Lịch Bằng Tàu
+            Hỏa?
+          </h2>
+          <div class="benefits-grid">
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <i class="fas fa-mountain-sun"></i>
+              </div>
+              <h3>Ngắm Cảnh Tuyệt Đẹp</h3>
+              <p>
+                Tận hưởng những cung đường sắt đẹp nhất Việt Nam, qua núi non
+                hùng vĩ, bờ biển thơ mộng.
+              </p>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon"><i class="fas fa-couch"></i></div>
+              <h3>Thoải Mái & Tiện Nghi</h3>
+              <p>
+                Ghế ngồi, giường nằm êm ái, không gian rộng rãi, dịch vụ ăn uống
+                và vệ sinh sạch sẽ trên tàu.
+              </p>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon"><i class="fas fa-shield-alt"></i></div>
+              <h3>An Toàn & Đáng Tin Cậy</h3>
+              <p>
+                Phương tiện di chuyển an toàn hàng đầu, lịch trình ổn định, ít
+                bị ảnh hưởng bởi thời tiết xấu.
+              </p>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon"><i class="fas fa-leaf"></i></div>
+              <h3>Thân Thiện Với Môi Trường</h3>
+              <p>
+                Lựa chọn di chuyển xanh, góp phần giảm thiểu khí thải carbon so
+                với các phương tiện khác.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <div class="train-info-sections">
+          <section class="popular-routes">
+            <h2><i class="fas fa-route"></i> Các Tuyến Tàu Phổ Biến</h2>
+            <ul>
+              <li>
+                <i class="fas fa-map-pin"></i> Hà Nội - Sài Gòn (Tàu Thống Nhất
+                SE1/SE2, SE3/SE4,...)
+              </li>
+              <li>
+                <i class="fas fa-map-pin"></i> Hà Nội - Đà Nẵng (Qua Huế, Vinh)
+              </li>
+              <li>
+                <i class="fas fa-map-pin"></i> Đà Nẵng - Sài Gòn (Qua Nha Trang,
+                Phan Thiết)
+              </li>
+              <li>
+                <i class="fas fa-map-pin"></i> Hà Nội - Lào Cai (Đi Sapa bằng
+                tàu SP, LC)
+              </li>
+              <li>
+                <i class="fas fa-map-pin"></i> Sài Gòn - Phan Thiết (Đi Mũi Né)
+              </li>
+              <li><i class="fas fa-map-pin"></i> Sài Gòn - Nha Trang</li>
+            </ul>
+          </section>
+          <section class="train-travel-tips">
+            <h2><i class="fas fa-lightbulb"></i> Mẹo Du Lịch Bằng Tàu Hỏa</h2>
+            <p>
+              <i class="fas fa-check-circle text-green"></i> Đặt vé sớm (ít nhất
+              1-2 tuần, dịp lễ tết nên sớm hơn) để có giá tốt và chỗ ngồi ưng ý.
+            </p>
+            <p>
+              <i class="fas fa-check-circle text-green"></i> Mang theo đồ dùng
+              cá nhân cần thiết, đồ ăn nhẹ và nước uống yêu thích.
+            </p>
+            <p>
+              <i class="fas fa-check-circle text-green"></i> Kiểm tra kỹ thông
+              tin trên vé (tên, số CMND/CCCD, ga đi/đến, giờ tàu) và chuẩn bị
+              giấy tờ tùy thân.
+            </p>
+            <p>
+              <i class="fas fa-check-circle text-green"></i> Đến ga sớm ít nhất
+              30-45 phút trước giờ tàu chạy để làm thủ tục lên tàu.
+            </p>
+            <p>
+              <i class="fas fa-check-circle text-green"></i> Tải ứng dụng theo
+              dõi lịch trình tàu hoặc kiểm tra thông tin tại ga.
+            </p>
+          </section>
+        </div>
+
+        <section class="train-testimonials">
+          <h2>
+            <i class="fas fa-comments"></i> Khách Hàng Nói Gì Về Dịch Vụ Đặt Vé
+            Tàu Của Chúng Tôi
+          </h2>
+          <div class="testimonial-grid">
+            <div class="testimonial-card">
+              <img
+                src="/anh/avatar_customer_1.png"
+                alt="Avatar khách hàng Nguyễn Văn An"
+                class="testimonial-avatar"
+              />
+              <p>
+                "Đặt vé tàu đi Đà Nẵng qua Travel Tour rất nhanh và tiện. Giao
+                diện thân thiện, dễ tìm kiếm. Nhân viên hỗ trợ rất nhiệt tình
+                khi tôi cần đổi vé. Chắc chắn sẽ sử dụng lại dịch vụ!"
+              </p>
+              <h4>Nguyễn Văn An</h4>
+              <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <img
+                src="/anh/avatar_customer_2.png"
+                alt="Avatar khách hàng Lê Thị Bình"
+                class="testimonial-avatar"
+              />
+              <p>
+                "Tôi thường xuyên đi công tác bằng tàu hỏa giữa Hà Nội và Vinh.
+                Từ khi biết đến Travel Tour, việc đặt vé trở nên đơn giản hơn
+                nhiều. Ưu đãi cũng tốt nữa. Rất hài lòng!"
+              </p>
+              <h4>Lê Thị Bình</h4>
+              <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="chan">
+        <div class="chan1">
+          <h3>THÔNG TIN LIÊN HỆ</h3>
+          <ul>
+            <li><h4>Địa chỉ</h4></li>
+            <li>Toà nhà Ladeco,Đống Đa,Hà Nội</li>
+            <li><h4>Email</h4></li>
+            <li>Traveltour@gmail.com.vn</li>
+            <li><h4>Hotiline</h4></li>
+            <li>1900 6789</li>
+          </ul>
+        </div>
+        <div class="chan2">
+          <h3>HƯỚNG DẪN</h3>
+          <ul>
+            <li><a href="/home.html">Trang chủ</a></li>
+            <li><a href="/dat-tour.html">Đặt tour</a></li>
+            <li><a href="/khach-san.html">Khách sạn</a></li>
+            <li><a href="/khu-vui-choi.html">Khu vui chơi</a></li>
+            <li><a href="/ve-xe.html">Vé xe</a></li>
+            <li><a href="/dat-ve-tau.html">Vé tàu</a></li>
+          </ul>
+        </div>
+        <div class="chan3">
+          <h3>THÔNG TIN CẦN BIẾT</h3>
+          <ul>
+            <li>Về chúng tôi</li>
+            <li>Câu hỏi thường gặp</li>
+            <li>Điều kiện,điều khoản</li>
+            <li>Quy chế hoạt động</li>
+            <li>Liên hệ</li>
+          </ul>
+        </div>
+        <div class="chan4">
+          <h3>KẾT NỐI</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-google"></i></a>
+          </div>
+          <h3>PHƯƠNG THỨC THANH TOÁN</h3>
+          <img
+            src="/anh/Ảnh màn hình 2025-05-16 lúc 14.55.25.png"
+            class="thanhtoan"
+            alt="Phương thức thanh toán"
+          />
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

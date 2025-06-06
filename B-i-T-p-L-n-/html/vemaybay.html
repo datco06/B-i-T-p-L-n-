@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/vemaybay.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="/anh/27Sep24 Simon  Free Upload  -3.png" alt="logo" />
+        <h3>TRAVEL TOUR</h3>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="/html/home.html">Home</a></li>
+          <li><a href="/html/taotour.html">Tạo Tour</a></li>
+          <li><a href="/html/khachsan.html">Khách sạn</a></li>
+          <li><a href="/html/leonui.html">Leo núi</a></li>
+          <li><a href="/html/vemaybay.html">Vé máy bay </a></li>
+          <li><a href="/html/vetau.html">Vé tàu</a></li>
+        </ul>
+      </nav>
+      <div class="taikhoan">
+        <button><a href="/html/dangnhap.html"> Đăng Nhập</a></button>
+        <button><a href="/html/dangki.html"> Đăng Ký</a></button>
+      </div>
+    </header>
+    <div class="banner">
+      <img src="/anh/TRAVEL TOUR.png" alt="banner" />
+    </div>
+    <div class="booking-box">
+      <div class="top-bar">
+        <span>✈ Mua hành lý, suất ăn, chỗ ngồi và hơn thế nữa…</span>
+        <span>📦 Gửi hàng nhanh | 📍 Check in</span>
+      </div>
+
+      <form>
+        <div class="radio-group">
+          <label><input type="radio" name="trip" checked /> Khứ hồi</label>
+          <label><input type="radio" name="trip" /> Một chiều</label>
+          <select>
+            <option>VND</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Điểm khởi hành</label>
+          <input type="text" placeholder="Nhập điểm khởi hành" />
+        </div>
+
+        <div class="form-group">
+          <label>Điểm đến</label>
+          <input type="text" placeholder="Nhập điểm đến" />
+        </div>
+
+        <div class="form-group">
+          <label>Ngày đi</label>
+          <input type="date" />
+        </div>
+
+        <div class="form-group">
+          <label>Ngày về</label>
+          <input type="date" />
+        </div>
+
+        <div class="dropdown">
+          <div class="dropdown-toggle" onclick="toggleDropdown()">
+            Hành khách: <span id="passenger-summary">1 người lớn</span>
+          </div>
+          <div class="dropdown-menu" id="passenger-menu">
+            <div class="passenger-row">
+              <div class="passenger-info">
+                <span>Người lớn</span>
+                <small>12 tuổi trở lên</small>
+              </div>
+              <div class="counter">
+                <button onclick="adjustCount('adult', -1)">−</button>
+                <span id="adult-count">1</span>
+                <button onclick="adjustCount('adult', 1)">+</button>
+              </div>
+            </div>
+
+            <div class="passenger-row">
+              <div class="passenger-info">
+                <span>Trẻ em</span>
+                <small>2–11 tuổi</small>
+              </div>
+              <div class="counter">
+                <button onclick="adjustCount('child', -1)">−</button>
+                <span id="child-count">0</span>
+                <button onclick="adjustCount('child', 1)">+</button>
+              </div>
+            </div>
+
+            <div class="passenger-row">
+              <div class="passenger-info">
+                <span>Em bé</span>
+                <small>Dưới 2 tuổi</small>
+              </div>
+              <div class="counter">
+                <button onclick="adjustCount('infant', -1)">−</button>
+                <span id="infant-count">0</span>
+                <button onclick="adjustCount('infant', 1)">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <script>
+          let passengers = {
+            adult: 1,
+            child: 0,
+            infant: 0,
+          };
+
+          function toggleDropdown() {
+            const menu = document.getElementById("passenger-menu");
+            menu.style.display =
+              menu.style.display === "block" ? "none" : "block";
+          }
+
+          function adjustCount(type, change) {
+            passengers[type] = Math.max(0, passengers[type] + change);
+            if (type === "adult" && passengers[type] === 0)
+              passengers[type] = 1; // Luôn có ít nhất 1 người lớn
+
+            document.getElementById(`${type}-count`).textContent =
+              passengers[type];
+            updateSummary();
+          }
+
+          function updateSummary() {
+            const { adult, child, infant } = passengers;
+            let parts = [];
+            if (adult > 0) parts.push(`${adult} người lớn`);
+            if (child > 0) parts.push(`${child} trẻ em`);
+            if (infant > 0) parts.push(`${infant} em bé`);
+
+            document.getElementById("passenger-summary").textContent =
+              parts.join(", ");
+          }
+
+          window.onclick = function (e) {
+            const dropdown = document.querySelector(".dropdown");
+            if (!dropdown.contains(e.target)) {
+              document.getElementById("passenger-menu").style.display = "none";
+            }
+          };
+        </script>
+
+        <div class="form-group">
+          <label>Chọn hãng bay</label>
+          <select
+            id="airline"
+            name="airline"
+            style="
+              width: 100%;
+              padding: 8px;
+              margin-top: 5px;
+              border-radius: 5px;
+            "
+          >
+            <option value="">-- Tất cả các hãng --</option>
+            <optgroup label="Hãng nội địa Việt Nam">
+              <option value="Vietnam Airlines">Vietnam Airlines</option>
+              <option value="Vietjet Air">Vietjet Air</option>
+              <option value="Bamboo Airways">Bamboo Airways</option>
+              <option value="Pacific Airlines">Pacific Airlines</option>
+              <option value="Vietravel Airlines">Vietravel Airlines</option>
+            </optgroup>
+
+            <optgroup label="Hãng quốc tế">
+              <option value="Emirates">Emirates</option>
+              <option value="Qatar Airways">Qatar Airways</option>
+              <option value="Singapore Airlines">Singapore Airlines</option>
+              <option value="Thai Airways">Thai Airways</option>
+              <option value="Korean Air">Korean Air</option>
+              <option value="Asiana Airlines">Asiana Airlines</option>
+              <option value="China Airlines">China Airlines</option>
+              <option value="EVA Air">EVA Air</option>
+              <option value="ANA">ANA (All Nippon Airways)</option>
+              <option value="Japan Airlines">Japan Airlines</option>
+              <option value="Cathay Pacific">Cathay Pacific</option>
+              <option value="AirAsia">AirAsia</option>
+              <option value="Scoot">Scoot</option>
+              <option value="Malaysia Airlines">Malaysia Airlines</option>
+              <option value="Lufthansa">Lufthansa</option>
+              <option value="Turkish Airlines">Turkish Airlines</option>
+              <option value="Etihad Airways">Etihad Airways</option>
+              <option value="British Airways">British Airways</option>
+              <option value="Air France">Air France</option>
+              <option value="KLM">KLM Royal Dutch Airlines</option>
+              <option value="United Airlines">United Airlines</option>
+              <option value="Delta Air Lines">Delta Air Lines</option>
+              <option value="American Airlines">American Airlines</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <div class="checkbox-group">
+          <input type="checkbox" id="cheap" />
+          <label for="cheap">Tìm vé rẻ nhất</label>
+        </div>
+
+        <button type="submit" class="search-button">Tìm chuyến bay</button>
+      </form>
+    </div>
+  </div> <section class="popular-destinations">
+    <h2>Điểm Đến Phổ Biến</h2>
+    <div class="destinations-container">
+      <div class="destination-card">
+        <img src="/anh/image copy 20.png" alt="Thành phố Paris thơ mộng">
+        <h3>Paris, Pháp</h3>
+        <p>Kinh đô ánh sáng với tháp Eiffel và những công trình kiến trúc lãng mạn.</p>
+        <a href="#" class="btn-explore">Khám Phá Ngay</a>
+      </div>
+      <div class="destination-card">
+        <img src="/anh/image copy 21.png" alt="Thành phố Tokyo hiện đại">
+        <h3>Tokyo, Nhật Bản</h3>
+        <p>Sự kết hợp độc đáo giữa văn hóa truyền thống và công nghệ hiện đại bậc nhất.</p>
+        <a href="#" class="btn-explore">Khám Phá Ngay</a>
+      </div>
+      <div class="destination-card">
+        <img src="/anh/image copy 22.png" alt="Vịnh Hạ Long kỳ vĩ">
+        <h3>Vịnh Hạ Long, Việt Nam</h3>
+        <p>Di sản thiên nhiên thế giới với hàng ngàn đảo đá vôi hùng vĩ và làn nước xanh ngọc.</p>
+        <a href="#" class="btn-explore">Khám Phá Ngay</a>
+      </div>
+      <div class="destination-card">
+        <img src="/anh/image copy 23.png" alt="Đảo Bali xinh đẹp">
+        <h3>Bali, Indonesia</h3>
+        <p>Thiên đường nghỉ dưỡng với bãi biển tuyệt đẹp, ruộng bậc thang và văn hóa đặc sắc.</p>
+        <a href="#" class="btn-explore">Khám Phá Ngay</a>
+      </div>
+      <div class="destination-card">
+        <img src="/anh/image copy 23.png" alt="Đảo Bali xinh đẹp">
+        <h3>Bali, Indonesia</h3>
+        <p>Thiên đường nghỉ dưỡng với bãi biển tuyệt đẹp, ruộng bậc thang và văn hóa đặc sắc.</p>
+        <a href="#" class="btn-explore">Khám Phá Ngay</a>
+      </div>
+      <div class="destination-card">
+        <img src="/anh/image copy 23.png" alt="Đảo Bali xinh đẹp">
+        <h3>Bali, Indonesia</h3>
+        <p>Thiên đường nghỉ dưỡng với bãi biển tuyệt đẹp, ruộng bậc thang và văn hóa đặc sắc.</p>
+        <a href="#" class="btn-explore">Khám Phá Ngay</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="special-offers">
+    <h2>Ưu Đãi Đặc Biệt Cho Bạn</h2>
+    <div class="offers-container">
+      <div class="offer-card">
+        <img src="/anh/3.png "alt="Ưu đãi vé máy bay nội địa">
+        <div class="offer-content">
+          <h4>🎉 Bay Nội Địa Thả Ga - Giảm Đến 30%</h4>
+          <p>Khám phá vẻ đẹp Việt Nam với ưu đãi hấp dẫn cho các chặng bay nội địa. Áp dụng cho các hãng bay hàng đầu!</p>
+          <a href="#" class="btn-offer">Xem Chi Tiết</a>
+        </div>
+      </div>
+      <div class="offer-card">
+        <img src="/anh/image copy 25.png" alt="Ưu đãi vé máy bay đi Thái Lan">
+        <div class="offer-content">
+          <h4>🌏 Vi Vu Thái Lan - Giá Chỉ Từ 1.599.000₫</h4>
+          <p>Trải nghiệm xứ sở Chùa Vàng với mức giá không thể tốt hơn. Đặt vé ngay, kẻo lỡ!</p>
+          <a href="#" class="btn-offer">Xem Chi Tiết</a>
+        </div>
+      </div>
+       <div class="offer-card">
+        <img src="/anh/image copy 24.png" alt="Ưu đãi combo du lịch">
+        <div class="offer-content">
+          <h4>✨ Combo Khách Sạn + Vé Bay Siêu Tiết Kiệm</h4>
+          <p>Tận hưởng chuyến đi trọn vẹn với gói combo ưu đãi đặc biệt. Lựa chọn đa dạng, dịch vụ chất lượng.</p>
+          <a href="#" class="btn-offer">Khám Phá Combo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-choose-us">
+      <h2>Vì Sao Chọn TRAVEL TOUR?</h2>
+      <div class="features-container">
+          <div class="feature-item">
+              <i class="fas fa-plane-departure"></i>
+              <h3>Đa Dạng Chuyến Bay</h3>
+              <p>Hàng ngàn chuyến bay từ các hãng hàng không uy tín trong và ngoài nước.</p>
+          </div>
+          <div class="feature-item">
+              <i class="fas fa-dollar-sign"></i>
+              <h3>Giá Tốt Nhất</h3>
+              <p>Luôn cập nhật giá vé ưu đãi, giúp bạn tiết kiệm chi phí tối đa.</p>
+          </div>
+          <div class="feature-item">
+              <i class="fas fa-headset"></i>
+              <h3>Hỗ Trợ 24/7</h3>
+              <p>Đội ngũ tư vấn viên chuyên nghiệp sẵn sàng hỗ trợ bạn mọi lúc, mọi nơi.</p>
+          </div>
+          <div class="feature-item">
+              <i class="fas fa-shield-alt"></i>
+              <h3>Thanh Toán An Toàn</h3>
+              <p>Bảo mật thông tin và giao dịch với nhiều phương thức thanh toán tiện lợi.</p>
+          </div>
+      </div>
+  </section>
+
+    <footer>
+      <div class="chan">
+        <div class="chan1">
+          <h3>THÔNG TIN LIÊN HỆ</h3>
+          <ul>
+            <li><h4>Địa chỉ</h4></li>
+            <li>Toà nhà Ladeco,Đống Đa,Hà Nội</li>
+            <li><h4>Email</h4></li>
+            <li>Traveltour@gmail.com.vn</li>
+            <li><h4>Hotiline</h4></li>
+            <li>1900 6789</li>
+          </ul>
+        </div>
+        <div class="chan2">
+          <h3>HƯỠNG DẪN</h3>
+          <ul>
+            <li>Trang chủ</li>
+            <li>Đặt tour</li>
+            <li>Khách sạn</li>
+            <li>Khu vui chơi</li>
+            <li>Vé xe</li>
+            <li>Vé tàu</li>
+          </ul>
+        </div>
+        <div class="chan3">
+          <h3>THÔNG TIN CẦN BIẾT</h3>
+          <ul>
+            <li>Về chúng tôi</li>
+            <li>Câu hỏi thường gặp</li>
+            <li>Điều kiện,điều khoản</li>
+            <li>Quy chế hoạt động</li>
+            <li>Liên hệ</li>
+          </ul>
+        </div>
+        <div class="chan4">
+          <h3>KẾT NỐI</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-google"></i></a>
+          </div>
+          <h3>PHƯƠNG THỨC THANH TOÁN</h3>
+          <img
+            src="/anh/Ảnh màn hình 2025-05-16 lúc 14.55.25.png"
+            class="thanhtoan"
+          />
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

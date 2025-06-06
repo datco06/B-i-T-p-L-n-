@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Tour - Đặt Tour Thông Minh Cùng AI</title>
+    <link rel="stylesheet" href="/css/taotour.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="/anh/27Sep24 Simon  Free Upload  -3.png" alt="logo" />
+        <h3>TRAVEL TOUR</h3>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/html/home.html">Home</a></li>
+          <li><a href="/html/taotour.html">Tạo Tour</a></li>
+          <li><a href="/html/khachsan.html">Khách sạn</a></li>
+          <li><a href="/html/leonui.html">Leo núi</a></li>
+          <li><a href="/html/vemaybay.html">Vé máy bay </a></li>
+          <li><a href="/html/vetau.html">Vé tàu</a></li>
+        </ul>
+      </nav>
+      <div class="taikhoan">
+        <button><a href="/html/dangnhap.html"> Đăng Nhập</a></button>
+        <button><a href="/html/dangki.html"> Đăng Ký</a></button>
+      </div>
+    </header>
+
+    <div class="banner" id="home">
+      <img src="/anh/Ảnh màn hình 2025-05-12 lúc 21.04.01.png" alt="banner" />
+      <div class="content">
+        <h2>DU LỊCH CÙNG TRAVEL TOUR</h2>
+        <p>
+          Vinh hạnh cùng chúng tôi là mang đến cho bạn những chuyển đi<br />đáng
+          nhớ. Mang đến cho bạn những chuyến đi đầy cảm hứng.<br />
+          Khám phá vùng đất mới. Tự do khám phá cùng chúng tôi.
+        </p>
+        <button
+          onclick="document.getElementById('ai-form-section').scrollIntoView({ behavior: 'smooth' });"
+        >
+          Tìm hiểu ngay
+        </button>
+      </div>
+    </div>
+
+    <section class="content2 why-choose-us">
+      <h1 class="section-title">Vì Sao Bạn Nên Chọn TRAVEL TOUR?</h1>
+      <div class="duoi">
+        <div class="lydo">
+          <div class="icon"><i class="fas fa-sack-dollar"></i></div>
+          <h3>Giá tốt nhất cho bạn</h3>
+          <p>
+            Có nhiều mức giá đa dạng phù hợp<br />
+            với ngân sách và nhu cầu của bạn.
+          </p>
+        </div>
+        <div class="lydo">
+          <div class="icon"><i class="fas fa-ticket-simple"></i></div>
+          <h3>Booking dễ dàng</h3>
+          <p>
+            Các bước booking và chăm sóc<br />
+            khách hàng nhanh chóng và thuận tiện.
+          </p>
+        </div>
+        <div class="lydo">
+          <div class="icon"><i class="fas fa-suitcase-rolling"></i></div>
+          <h3>Tour du lịch tối ưu</h3>
+          <p>
+            Đa dạng các loại hình tour du lịch<br />
+            với nhiều mức giá khác nhau.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-ai-helps-section">
+      <h1 class="section-title">
+        AI Đồng Hành Cùng Chuyến Đi Của Bạn Như Thế Nào?
+      </h1>
+      <p class="section-subtitle">
+        Khám phá cách trí tuệ nhân tạo mang đến trải nghiệm du lịch cá nhân hóa
+        và thông minh hơn.
+      </p>
+      <div class="ai-benefits-container">
+        <div class="ai-benefit-item">
+          <div class="ai-benefit-icon"><i class="fas fa-user-cog"></i></div>
+          <h3>Cá Nhân Hóa Tối Đa</h3>
+          <p>
+            AI phân tích sở thích, ngân sách và lịch trình của bạn để tạo ra một
+            chuyến đi độc nhất, dành riêng cho bạn.
+          </p>
+        </div>
+        <div class="ai-benefit-item">
+          <div class="ai-benefit-icon"><i class="fas fa-lightbulb"></i></div>
+          <h3>Gợi Ý Thông Minh</h3>
+          <p>
+            Khám phá những điểm đến ẩn mình, hoạt động thú vị và món ăn địa
+            phương độc đáo mà có thể bạn chưa từng biết tới.
+          </p>
+        </div>
+        <div class="ai-benefit-item">
+          <div class="ai-benefit-icon"><i class="fas fa-route"></i></div>
+          <h3>Tối Ưu Hóa Lịch Trình</h3>
+          <p>
+            AI giúp sắp xếp lịch trình một cách logic, tiết kiệm thời gian di
+            chuyển và đảm bảo bạn không bỏ lỡ những điều tuyệt vời nhất.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ai-tour-form-section" id="ai-form-section">
+      <h1 class="section-title">Thiết Kế Tour Của Riêng Bạn Cùng AI</h1>
+      <p class="section-subtitle">
+        Cung cấp thông tin dưới đây để AI của chúng tôi tạo ra kỳ nghỉ hoàn hảo
+        cho bạn.
+      </p>
+      <form class="ai-tour-form">
+        <div class="input-group-ai full-width">
+          <label for="destination"
+            ><i class="fas fa-map-marked-alt"></i> Bạn muốn đi đâu?</label
+          >
+          <input
+            type="text"
+            id="destination"
+            name="destination"
+            placeholder="Ví dụ: Đà Nẵng, Phú Quốc, Châu Âu..."
+            required
+          />
+        </div>
+        <div class="input-group-ai">
+          <label for="pickup-location"
+            ><i class="fas fa-street-view"></i> Địa điểm đón (nếu có)</label
+          >
+          <input
+            type="text"
+            id="pickup-location"
+            name="pickup-location"
+            placeholder="Ví dụ: Sân bay Nội Bài, Nhà riêng..."
+          />
+        </div>
+        <div class="input-group-ai">
+          <label for="departure-date"
+            ><i class="fas fa-calendar-alt"></i> Ngày đi</label
+          >
+          <input
+            type="date"
+            id="departure-date"
+            name="departure-date"
+            required
+          />
+        </div>
+        <div class="input-group-ai">
+          <label for="return-date"
+            ><i class="fas fa-calendar-check"></i> Ngày về</label
+          >
+          <input type="date" id="return-date" name="return-date" required />
+        </div>
+        <div class="input-group-ai">
+          <label for="transportation"
+            ><i class="fas fa-bus"></i> Lựa chọn di chuyển chính</label
+          >
+          <select id="transportation" name="transportation">
+            <option value="may-bay">Máy bay</option>
+            <option value="tau-hoa">Tàu hỏa</option>
+            <option value="xe-khach">Xe khách</option>
+            <option value="oto-ca-nhan">Ô tô cá nhân/thuê xe tự lái</option>
+            <option value="ai-suggest">Để AI gợi ý</option>
+          </select>
+        </div>
+        <div class="number-inputs-ai full-width">
+          <div class="input-group-ai">
+            <label for="adults"
+              ><i class="fas fa-user"></i> Số người lớn (Từ 12 tuổi)</label
+            >
+            <input
+              type="number"
+              id="adults"
+              name="adults"
+              min="1"
+              value="1"
+              required
+            />
+          </div>
+          <div class="input-group-ai">
+            <label for="children"
+              ><i class="fas fa-child"></i> Số trẻ em (Dưới 12 tuổi)</label
+            >
+            <input
+              type="number"
+              id="children"
+              name="children"
+              min="0"
+              value="0"
+            />
+          </div>
+        </div>
+        <div class="input-group-ai full-width">
+          <label for="preferences"
+            ><i class="fas fa-sliders-h"></i> Sở thích/Yêu cầu đặc biệt (tùy
+            chọn)</label
+          >
+          <input
+            type="text"
+            id="preferences"
+            name="preferences"
+            placeholder="Ví dụ: thích biển, ẩm thực, không đi bộ nhiều..."
+          />
+        </div>
+        <div class="full-width">
+          <button type="submit">
+            <i class="fas fa-cogs"></i> Yêu Cầu AI Thiết Kế Tour
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <section class="ai-tour-results">
+      <h2 class="section-title">Hành Trình Dành Riêng Cho Bạn</h2>
+      <div class="placeholder-text">
+        <i class="fas fa-magic fa-2x"></i><br />
+        Sau khi bạn gửi yêu cầu, các gợi ý tour được thiết kế bởi AI sẽ xuất
+        hiện ở đây. <br />Mong bạn chờ trong giây lát!
+      </div>
+    </section>
+
+    <section class="featured-tours-section" id="featured-tours">
+      <h1 class="section-title">Gói Tour AI Đề Xuất</h1>
+      <p class="section-subtitle">
+        Khám phá những hành trình độc đáo được AI tạo ra dựa trên các xu hướng
+        mới nhất!
+      </p>
+      <div class="featured-tours-container">
+        <div class="featured-tour-card">
+          <img
+            src="/anh/image.png"
+            alt="Tour Du Lịch Biển"
+            class="featured-tour-image"
+          />
+          <div class="featured-tour-content">
+            <h3>Kỳ Quan Biển Xanh Phú Quốc</h3>
+            <p class="tour-duration">
+              <i class="fas fa-clock"></i> 4 Ngày 3 Đêm
+            </p>
+            <p class="tour-description">
+              Trải nghiệm vẻ đẹp Phú Quốc với lịch trình tối ưu: lặn ngắm san
+              hô, khám phá chợ đêm, thưởng thức hải sản tươi ngon...
+            </p>
+            <a href="#" class="btn-view-tour">Xem Chi Tiết</a>
+          </div>
+        </div>
+        <div class="featured-tour-card">
+          <img
+            src="/anh/image copy 34.png"
+            alt="Tour Khám Phá Văn Hóa"
+            class="featured-tour-image"
+          />
+          <div class="featured-tour-content">
+            <h3>Hành Trình Di Sản Miền Trung</h3>
+            <p class="tour-duration">
+              <i class="fas fa-clock"></i> 5 Ngày 4 Đêm
+            </p>
+            <p class="tour-description">
+              Từ Huế mộng mơ đến Hội An cổ kính và Đà Nẵng năng động. Một chuyến
+              đi đầy ắp văn hóa và lịch sử.
+            </p>
+            <a href="#" class="btn-view-tour">Xem Chi Tiết</a>
+          </div>
+        </div>
+        <div class="featured-tour-card">
+          <img
+            src="/anh/image copy 35.png"
+            alt="Tour Phiêu Lưu"
+            class="featured-tour-image"
+          />
+          <div class="featured-tour-content">
+            <h3>Chinh Phục Cao Nguyên Đà Lạt</h3>
+            <p class="tour-duration">
+              <i class="fas fa-clock"></i> 3 Ngày 2 Đêm
+            </p>
+            <p class="tour-description">
+              Không khí trong lành, cảnh quan hùng vĩ và những trải nghiệm phiêu
+              lưu khó quên tại thành phố ngàn hoa.
+            </p>
+            <a href="#" class="btn-view-tour">Xem Chi Tiết</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="phan2 booking-steps">
+      <h1 class="section-title">Booking Cùng Travel Tour</h1>
+      <p class="section-subtitle">
+        Chỉ với vài bước đơn giản và dễ dàng bạn có ngay trải nghiệm tuyệt vời!
+      </p>
+      <div class="cacbuoc">
+        <div class="buoc">
+          <img
+            src="/anh/Ảnh màn hình 2025-05-14 lúc 21.43.11.png"
+            alt="Tìm nơi đến"
+          />
+          <h3>Tìm nơi bạn muốn đến</h3>
+          <p>
+            Bất cứ nơi đâu bạn muốn đến, chúng tôi<br />
+            có tất cả những gì bạn muốn.
+          </p>
+        </div>
+        <div class="buoc">
+          <img
+            src="/anh/Ảnh màn hình 2025-05-14 lúc 21.43.18.png"
+            alt="Tạo tour"
+          />
+          <h3>Tạo tour thông minh</h3>
+          <p>
+            Travel Tour sẽ hỗ trợ thiết kế tour <br />
+            trực tiếp nhanh chóng và thuận tiện.
+          </p>
+        </div>
+        <div class="buoc">
+          <img
+            src="/anh/Ảnh màn hình 2025-05-14 lúc 21.43.25.png"
+            alt="Thanh toán"
+          />
+          <h3>Thanh toán & Lên đường</h3>
+          <p>Hoàn thành thanh toán và sẵn sàng<br />cho chuyến đi sắp tới.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="phan3 about-us-section" id="about-us">
+      <div class="trai">
+        <h2 class="custom-h2">Hiểu Hơn Về Chúng Tôi</h2>
+        <h1 class="custom-h1">
+          Lên Kế Hoạch Cho Chuyến Đi Của Bạn Cùng ND Travel
+        </h1>
+        <p class="dai">
+          Vinh hạnh của chúng tôi là mang đến cho bạn những chuyến đi đáng nhớ.
+          Mang đến cho bạn những chuyến đi đầy cảm hứng. Khám phá những vùng đất
+          mới. Tự do khám phá cùng chúng tôi.
+        </p>
+        <h2 class="custom-h2">
+          Cơ hội tuyệt vời để gửi gắm niềm tin cùng ND Travel. Tại sao không?
+        </h2>
+        <div class="tich">
+          Hơn 10.000 khách hàng trên khắp cả nước đã đồng hành cùng chúng tôi.
+        </div>
+        <div class="tich">Bao phủ hơn 1.000 tour trong và ngoài nước.</div>
+        <div class="tich">Tour và giá cả rất đa dạng, phù hợp mọi nhu cầu.</div>
+      </div>
+      <div class="image-layout">
+        <div class="image-wrapper img1">
+          <img src="/anh/image.png" alt="Camping by the lake" />
+        </div>
+        <div class="image-wrapper img2">
+          <img src="/anh/image copy 34.png" alt="Couple taking selfie" />
+        </div>
+        <div class="image-wrapper img3">
+          <img src="/anh/image copy 2.png" alt="Beach with chairs" />
+        </div>
+      </div>
+    </section>
+
+    <section class="phan4 testimonials-section" id="testimonials">
+      <div class="tieude">
+        <h1 class="section-title">Khách Hàng Nói Gì Về Chúng Tôi</h1>
+        <p class="section-subtitle">
+          Chúng tôi vinh hạnh vì đã có cơ hội đồng hành với hơn 10.000 khách
+          hàng trên khắp thế giới.
+        </p>
+      </div>
+      <div class="slide">
+        <div class="slide1">
+          <p>
+            "Dịch vụ rất tuyệt vời. Mình đã có một chuyến đi cực kì đáng nhớ.
+            Travel Tour đã hỗ trợ rất nhanh khi gặp vấn đề và mình đánh giá rất
+            cao chăm sóc khách hàng."
+          </p>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <img
+            src="/anh/image copy 3.png"
+            class="khach1"
+            alt="Khách hàng Thu Thảo"
+          />
+          <h4>Thu Thảo</h4>
+        </div>
+        <div class="slide1">
+          <p>
+            "Tour thiết kế rất hợp lý, phù hợp với gia đình có con nhỏ. Các bạn
+            tư vấn nhiệt tình, chu đáo. Chắc chắn sẽ quay lại với Travel Tour
+            cho những chuyến đi sau!"
+          </p>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <img
+            src="/anh/image copy 3.png"
+            class="khach1"
+            alt="Khách hàng Minh Anh"
+          />
+          <h4>Minh Anh</h4>
+        </div>
+        <div class="slide1">
+          <p>
+            "Lần đầu trải nghiệm đặt tour qua AI và thực sự ấn tượng. Lịch trình
+            thông minh, tiết kiệm thời gian mà vẫn đầy đủ các điểm tham quan hấp
+            dẫn. Rất khuyến khích!"
+          </p>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <img
+            src="/anh/image copy 3.png"
+            class="khach1"
+            alt="Khách hàng Quốc Bảo"
+          />
+          <h4>Quốc Bảo</h4>
+        </div>
+      </div>
+    </section>
+
+    <section class="donghanh partners-section">
+      <h1 class="section-title">Đồng Hành Cùng Travel Tour</h1>
+      <img
+        src="/anh/Ảnh màn hình 2025-05-16 lúc 08.46.16.png"
+        class="anhdh"
+        alt="Đối tác đồng hành"
+      />
+    </section>
+
+    <footer>
+      <div class="chan">
+        <div class="chan1">
+          <h3>THÔNG TIN LIÊN HỆ</h3>
+          <ul>
+            <li><h4>Địa chỉ</h4></li>
+            <li>Toà nhà Ladeco, Đống Đa, Hà Nội</li>
+            <li><h4>Email</h4></li>
+            <li>Traveltour@gmail.com.vn</li>
+            <li><h4>Hotline</h4></li>
+            <li>1900 6789</li>
+          </ul>
+        </div>
+        <div class="chan2">
+          <h3>HƯỚNG DẪN</h3>
+          <ul>
+            <li><a href="#home">Trang chủ</a></li>
+            <li><a href="#ai-form-section">Đặt tour</a></li>
+            <li><a href="#">Khách sạn</a></li>
+            <li><a href="#">Khu vui chơi</a></li>
+            <li><a href="#">Vé xe</a></li>
+            <li><a href="#">Vé tàu</a></li>
+          </ul>
+        </div>
+        <div class="chan3">
+          <h3>THÔNG TIN CẦN BIẾT</h3>
+          <ul>
+            <li><a href="#about-us">Về chúng tôi</a></li>
+            <li><a href="#">Câu hỏi thường gặp</a></li>
+            <li><a href="#">Điều kiện, điều khoản</a></li>
+            <li><a href="#">Quy chế hoạt động</a></li>
+            <li><a href="#">Liên hệ</a></li>
+          </ul>
+        </div>
+        <div class="chan4">
+          <h3>KẾT NỐI</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-google"></i></a>
+          </div>
+          <h3>PHƯƠNG THỨC THANH TOÁN</h3>
+          <img
+            src="/anh/Ảnh màn hình 2025-05-16 lúc 14.55.25.png"
+            class="thanhtoan"
+            alt="Phương thức thanh toán"
+          />
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,239 @@
+/* Reset một số style mặc định */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+}
+
+header {
+  background-color: #e6f2ff; /* Màu xanh nhẹ */
+  padding: 15px 5%; /* Thêm padding 2 bên */
+  display: flex;
+  justify-content: space-between; /* Căn các phần tử cách đều nhau */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Thêm bóng nhẹ */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 40px; /* Chiều cao logo */
+}
+
+nav ul {
+  display: flex; /* Hiển thị các mục nav trên cùng 1 dòng */
+  list-style: none; /* Bỏ dấu chấm của list */
+  gap: 30px; /* Khoảng cách giữa các mục nav */
+  margin-left: 150px;
+}
+
+nav a {
+  text-decoration: none; /* Bỏ gạch chân */
+  color: #333; /* Màu chữ */
+  font-weight: 500; /* Độ đậm của chữ */
+  font-size: 16px;
+  transition: color 0.3s; /* Hiệu ứng chuyển màu */
+}
+
+nav a:hover {
+  color: #0077b6; /* Màu khi di chuột qua */
+}
+
+.taikhoan {
+  display: flex;
+  gap: 15px; /* Khoảng cách giữa 2 nút */
+}
+
+.taikhoan button {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+  border-radius: 10px;
+}
+
+.taikhoan button:first-child {
+  background-color: #0077b6; /* Màu nền nút Đăng Ký */
+  color: white; /* Màu nền nút Đăng Nhập */
+}
+
+.taikhoan button:last-child {
+  background-color: #0077b6; /* Màu nền nút Đăng Ký */
+  color: white;
+}
+
+.taikhoan button:hover {
+  opacity: 0.9; /* Hiệu ứng khi hover */
+}
+.taikhoan button a {
+  text-decoration: none;
+  color: inherit;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 30px;
+}
+
+.logo h3 {
+  font-size: 25px;
+  color: #1c61ad;
+  margin: 0;
+}
+/* CSS cho phần banner */
+/* Giảm độ cao của banner */
+
+.chan {
+  margin-top: 100px;
+  display: flex;
+  gap: 80px;
+  justify-content: space-around;
+  border-top: 1px solid rgb(37, 26, 26);
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.thanhtoan {
+  width: 300px;
+}
+.chan1,
+.chan2,
+.chan3,
+.chan4 {
+  line-height: 2;
+  margin-top: 60px;
+}
+.banner {
+  background-color: #4f93dc;
+  color: white;
+  height: 150px;
+  margin-top: 70px;
+}
+.content {
+  padding-top: 70px;
+  margin-left: 90px;
+}
+.content a {
+  text-decoration: none;
+  color: white;
+}
+.registration-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.registration-form h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.login-link {
+  text-align: center;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.login-link a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  height: 1px;
+  background-color: #ddd;
+  margin: 20px 0;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.register-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.register-btn:hover {
+  background-color: #0055aa;
+}
+
+.social-login {
+  text-align: center;
+  color: #666;
+  margin: 20px 0;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.social-btn {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.social-btn.facebook {
+  color: #3b5998;
+}
+
+.social-btn.google {
+  color: #db4437;
+}
+
+.social-btn i {
+  font-size: 16px;
+}
+.qmk {
+  text-align: center;
+  margin-top: 10px;
+  color: #666;
+}
