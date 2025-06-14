@@ -4,39 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Đặt Vé Tàu Sinh Động - Travel Tour</title>
-    <link rel="stylesheet" href="/css/vetau.css" />
+    <link rel="stylesheet" href="../css/vetau.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
   </head>
+  <script src="../js/vetau.js"></script>
+  <script src="../js/datvetau.js"></script>
+
+  
+
   <body>
     <header>
       <div class="logo">
-        <img src="/anh/27Sep24 Simon  Free Upload  -3.png" alt="logo" />
+        <img src="../anh/27Sep24 Simon  Free Upload  -3.png" alt="logo" />
         <h3>TRAVEL TOUR</h3>
       </div>
 
       <nav>
         <ul>
-          <li><a href="/html/home.html">Home</a></li>
-          <li><a href="/html/taotour.html">Tạo Tour</a></li>
-          <li><a href="/html/khachsan.html">Khách sạn</a></li>
-          <li><a href="/html/leonui.html">Leo núi</a></li>
-          <li><a href="/html/vemaybay.html">Vé máy bay </a></li>
-          <li><a href="/html/vetau.html">Vé tàu</a></li>
+          <li><a href="../html/home.html">Home</a></li>
+          <li><a href="../html/taotour.html">Tạo Tour</a></li>
+          <li><a href="../html/khachsan.html">Khách sạn</a></li>
+          <li><a href="../html/leonui.html">Leo núi</a></li>
+          <li><a href="../html/vemaybay.html">Vé máy bay </a></li>
+          <li><a href="../html/vetau.html">Vé tàu</a></li>
         </ul>
       </nav>
       <div class="taikhoan">
-        <button><a href="/html/dangnhap.html"> Đăng Nhập</a></button>
-        <button><a href="/html/dangki.html"> Đăng Ký</a></button>
+        <button><a href="../html/dangnhap.html"> Đăng Nhập</a></button>
+        <button><a href="../html/dangki.html"> Đăng Ký</a></button>
       </div>
     </header>
 
     <main class="train-ticket-booking-page">
       <div class="train-page-banner">
         <img
-          src="/anh/Gemini_Generated_Image_ku1zl0ku1zl0ku1z.png"
+          src="../anh/Gemini_Generated_Image_ku1zl0ku1zl0ku1z.png"
           alt="Du lịch bằng tàu hỏa ngắm cảnh đẹp Việt Nam"
         />
         <div class="train-banner-overlay">
@@ -47,6 +52,9 @@
           </p>
         </div>
       </div>
+
+      
+
 
       <div class="container">
         <h1><i class="fas fa-subway"></i> Đặt Vé Tàu Trực Tuyến</h1>
@@ -87,7 +95,7 @@
             <div class="input-group">
               <label for="departure-date"
                 ><i class="fas fa-calendar-alt"></i> Ngày đi:</label
-              >
+              > 
               <input
                 type="date"
                 id="departure-date"
@@ -145,7 +153,7 @@
           <div class="offers-grid">
             <div class="offer-card">
               <img
-                src="/anh/image copy 26.png"
+                src="../anh/image copy 26.png"
                 alt="Ưu đãi vé tàu Hà Nội - Sapa"
               />
               <div class="offer-content">
@@ -154,14 +162,14 @@
                   350.000đ
                 </h3>
                 <p>Khám phá nóc nhà Đông Dương với ưu đãi đặc biệt.</p>
-                <a href="#" class="btn-offer"
-                  >Xem Chi Tiết <i class="fas fa-chevron-right"></i
-                ></a>
+                <button class="btn-offer" onclick = "openBookingForm('Hà Nội - Sapa', 350000)">Đặt vé</button>
+                  <!-- >Đặt vé <i class="fas fa-chevron-right"></i -->
+                <!-- ></> -->
               </div>
             </div>
             <div class="offer-card">
               <img
-                src="/anh/image copy 27.png"
+                src="../anh/image copy 27.png"
                 alt="Ưu đãi vé tàu Đà Nẵng - Huế"
               />
               <div class="offer-content">
@@ -173,14 +181,15 @@
                   Giảm 15% vé khứ hồi khi đặt qua Travel Tour. Ngắm cảnh đèo Hải
                   Vân hùng vĩ.
                 </p>
-                <a href="#" class="btn-offer"
-                  >Xem Chi Tiết <i class="fas fa-chevron-right"></i
-                ></a>
+                <!-- <a href="#" class="btn-offer"
+                  >Đặt vé <i class="fas fa-chevron-right"></i
+                ></a> -->
+                <button class="btn-offer" onclick = "openBookingForm('Đà Nẵng - Huế',200000)">Đặt vé</button>
               </div>
             </div>
             <div class="offer-card">
               <img
-                src="/anh/image copy 28.png"
+                src="../anh/image copy 28.png"
                 alt="Ưu đãi vé tàu Sài Gòn - Nha Trang"
               />
               <div class="offer-content">
@@ -192,13 +201,58 @@
                   Combo vé tàu + khách sạn giá cực tốt cho chuyến đi biển ngập
                   nắng.
                 </p>
-                <a href="#" class="btn-offer"
-                  >Xem Chi Tiết <i class="fas fa-chevron-right"></i
-                ></a>
+                <!-- <a href="#" class="btn-offer"
+                  >Đặt vé <i class="fas fa-chevron-right"></i
+                ></a> -->
+                <button class = "btn-offer" onclick = "openBookingForm('Sài Gòn - Nha Trang',400000)">Đặt vé</button>
               </div>
             </div>
           </div>
         </section>
+
+          <!--Form hiển thị thông tin đặt vé-->
+          <div id = "booking-form-container" style ="display: none;">
+              <h2>Đặt vé</h2>
+              <form class="booking-form">
+                  <div class="form-row">
+
+                    <div class="input-group">
+                      <label for="booking-departure-station"><i class="fas fa-train"></i> Ga đi:</label>
+                      <input type="text" id="booking-departure-station" name="booking-departure-station" required />
+                    </div>
+
+                    <div class="input-group">
+                      <label for="booking-arrival-station"><i class="fas fa-train"></i> Ga đến:</label>
+                      <input type="text" id="booking-arrival-station" name="booking-arrival-station" required />
+                    </div>
+
+                    <div class="input-group">
+                      <label for="booking-departure-date"><i class="fas fa-calendar-alt"></i> Ngày đi:</label>
+                      <input type="date" id="booking-departure-date" name="booking-departure-date" required />
+                    </div>
+
+                    <div class = "input-group">
+                      <label for="booking-passengers"><i class="fas fa-users"></i> Số lượng hành khách:</label>
+                      <input type="number" id="booking-passengers" name="booking-passengers" min="1" value="1" required />
+                    </div>
+                  </div>
+
+                  <button type="button" class="search-button" onclick="submitBooking()">
+                    <i class="fas fa-check"></i> Xác Nhận Đặt Vé
+                  </button>
+              </form>
+
+              <!-- Phần Tóm Tắt Đặt Vé -->
+              <div id="booking-summary" style="display: none;">
+                <h2>Thông Tin Đặt Vé</h2>
+                <p><strong>Tuyến đường:</strong> <span id="summary-route"></span></p>
+                <p><strong>Ngày đi:</strong> <span id="summary-date"></span></p>
+                <p><strong>Số lượng hành khách:</strong> <span id="summary-passengers"></span></p>
+                <p><strong>Tổng số tiền:</strong> <span id="summary-total"></span> VNĐ</p>
+              </div>  
+          </div>
+
+
 
         <section class="why-choose-train">
           <h2>
@@ -302,7 +356,7 @@
           <div class="testimonial-grid">
             <div class="testimonial-card">
               <img
-                src="/anh/avatar_customer_1.png"
+                src="../anh/avatar_customer_1.png"
                 alt="Avatar khách hàng Nguyễn Văn An"
                 class="testimonial-avatar"
               />
@@ -320,7 +374,7 @@
             </div>
             <div class="testimonial-card">
               <img
-                src="/anh/avatar_customer_2.png"
+                src="../anh/avatar_customer_2.png"
                 alt="Avatar khách hàng Lê Thị Bình"
                 class="testimonial-avatar"
               />
@@ -386,7 +440,7 @@
           </div>
           <h3>PHƯƠNG THỨC THANH TOÁN</h3>
           <img
-            src="/anh/Ảnh màn hình 2025-05-16 lúc 14.55.25.png"
+            src="/anh/Ảnh màn hình 2025-05-16 lúc 14.55.25.png"
             class="thanhtoan"
             alt="Phương thức thanh toán"
           />
