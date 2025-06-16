@@ -73,9 +73,9 @@
                 type="text"
                 id="departure-station"
                 name="departure-station"
-                placeholder="VD: Hà Nội"
-                required
+                placeholder="VD: Hà Nội"               
               />
+               <p id="error-departure-station" style="display: none; color: red; margin-top: 5px;"></p>
             </div>
             <div class="input-group">
               <label for="arrival-station"
@@ -85,9 +85,9 @@
                 type="text"
                 id="arrival-station"
                 name="arrival-station"
-                placeholder="VD: Đà Nẵng"
-                required
+                placeholder="VD: Đà Nẵng"               
               />
+               <p id="error-arrival-station" style="display: none; color: red; margin-top: 5px;"></p>
             </div>
           </div>
 
@@ -100,8 +100,8 @@
                 type="date"
                 id="departure-date"
                 name="departure-date"
-                required
               />
+               <p id="error-departure-date" style="display: none; color: red; margin-top: 5px;"></p>
             </div>
             <div class="input-group">
               <label for="return-date"
@@ -109,6 +109,8 @@
                 buộc):</label
               >
               <input type="date" id="return-date" name="return-date" />
+              <p id = "error-return-date" style="display: none; color: red; margin-top: 5px;"></p>
+
             </div>
           </div>
 
@@ -123,8 +125,8 @@
                 name="passengers"
                 min="1"
                 value="1"
-                required
               />
+               <p id="error-passengers" style="display: none; color: red; margin-top: 5px;"></p>
             </div>
             <div class="input-group">
               <label for="ticket-type"
@@ -146,6 +148,9 @@
           <button type="submit" class="search-button">
             <i class="fas fa-search"></i> Tìm Vé Tàu Ngay
           </button>
+          
+          <div id="result-message" style="margin-top: 20px; padding: 10px; border: 1px solid #28a745; background-color: #eafaf1; color: #155724; display: none; border-radius: 5px;"></div>
+
         </form>
 
         <section class="train-offers-section">
@@ -218,7 +223,7 @@
 
                     <div class="input-group">
                       <label for="booking-departure-station"><i class="fas fa-train"></i> Ga đi:</label>
-                      <input type="text" id="booking-departure-station" name="booking-departure-station" required />
+                      <input type="text" id="booking-departure-station" name="booking-departure-station" required />                     
                     </div>
 
                     <div class="input-group">

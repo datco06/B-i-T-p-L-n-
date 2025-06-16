@@ -4,33 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thiết Kế Tour Leo Núi Theo Yêu Cầu - Travel Tour</title>
-    <link rel="stylesheet" href="/css/leonui.css" />
+    <link rel="stylesheet" href="../css/leonui.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
   </head>
+  <script src ="../js/leonui.js"></script>
   <body>
+    <div id="success-message" class="success-message">Cảm ơn bạn đã gửi yêu cầu! Travel Tour sẽ liên hệ sớm nhất.</div>
     <header>
       <div class="logo">
         <img src="/anh/27Sep24 Simon  Free Upload  -3.png" alt="logo" />
         <h3>TRAVEL TOUR</h3>
       </div>
+    
+
       <nav>
         <ul>
-          <li><a href="/html/home.html">Home</a></li>
-          <li><a href="/html/taotour.html">Tạo Tour</a></li>
-          <li><a href="/html/khachsan.html">Khách sạn</a></li>
-          <li><a href="/html/leonui.html">Leo núi</a></li>
-          <li><a href="/html/vemaybay.html">Vé máy bay </a></li>
-          <li><a href="/html/vetau.html">Vé tàu</a></li>
+          <li><a href="../html/home.html">Home</a></li>
+          <li><a href="../html/taotour.html">Tạo Tour</a></li>
+          <li><a href="../html/khachsan.html">Khách sạn</a></li>
+          <li><a href="../html/leonui.html">Leo núi</a></li>
+          <li><a href="../html/vemaybay.html">Vé máy bay </a></li>
+          <li><a href="../html/vetau.html">Vé tàu</a></li>
         </ul>
       </nav>
       <div class="taikhoan">
-        <button><a href="/html/dangnhap.html"> Đăng Nhập</a></button>
-        <button><a href="/html/dangki.html"> Đăng Ký</a></button>
+        <button><a href="../html/dangnhap.html"> Đăng Nhập</a></button>
+        <button><a href="../html/dangki.html"> Đăng Ký</a></button>
       </div>
     </header>
+    
 
     <main class="mountain-tour-design-page">
       <section class="hero-mountain-banner">
@@ -217,11 +222,11 @@
                   2-3 ngày<br />Chinh phục đỉnh núi cao nhất Việt Nam, ngắm biển
                   mây hùng vĩ.
                 </p>
-                <a
+                <!-- <a
                   href="#consultation-form-section"
                   class="btn-secondary-mountain"
-                  >Thiết Kế Tour Fansipan</a
-                >
+                  >Thiết kế tour Fanxipan</a
+                > -->
               </div>
             </div>
             <div class="route-card-mountain">
@@ -233,11 +238,11 @@
                   3-4 ngày<br />Khám phá rừng nguyên sinh với thảm thực vật đa
                   dạng, hoa đỗ quyên rực rỡ.
                 </p>
-                <a
+                <!-- <a
                   href="#consultation-form-section"
                   class="btn-secondary-mountain"
                   >Thiết Kế Tour Putaleng</a
-                >
+                > -->
               </div>
             </div>
             <div class="route-card-mountain">
@@ -251,11 +256,11 @@
                   1-2 ngày<br />Cung đường lý tưởng cho người mới, cơ hội ngắm
                   biển mây tuyệt đẹp.
                 </p>
-                <a
+                <!-- <a
                   href="#consultation-form-section"
                   class="btn-secondary-mountain"
-                  >Thiết Kế Tour Lảo Thẩn</a
-                >
+                  ></a
+                > -->
               </div>
             </div>
           </div>
@@ -282,8 +287,11 @@
                   id="name"
                   name="name"
                   placeholder="Nguyễn Văn A"
-                  required
+                  
                 />
+
+                 <p id="error-name" style="display: none; color: red; margin-top: 5px;"></p>
+
               </div>
               <div class="form-group-mountain">
                 <label for="email"
@@ -294,8 +302,12 @@
                   id="email"
                   name="email"
                   placeholder="bancuatoi@example.com"
-                  required
+                  
                 />
+
+                <p id="error-email" style="display: none; color: red; margin-top: 5px;"></p>
+
+
               </div>
             </div>
             <div class="form-row-mountain">
@@ -308,8 +320,11 @@
                   id="phone"
                   name="phone"
                   placeholder="09xxxxxxxx"
-                  required
+                  
                 />
+
+                  <p id="error-phone"  style="display: none; color: red; margin-top: 5px;"></p>
+
               </div>
               <div class="form-group-mountain">
                 <label for="destination"
@@ -322,6 +337,11 @@
                   name="destination"
                   placeholder="VD: Fansipan, Tà Xùa..."
                 />
+
+
+                  <p id="error-destination" style="display: none; color: red; margin-top: 5px;"></p>
+
+
               </div>
             </div>
             <div class="form-row-mountain">
@@ -336,6 +356,10 @@
                   min="1"
                   placeholder="VD: 2"
                 />
+
+                <p id="error-duration"  style="display: none; color: red; margin-top: 5px;"></p>
+
+
               </div>
               <div class="form-group-mountain">
                 <label for="participants"
@@ -348,6 +372,10 @@
                   min="1"
                   placeholder="VD: 4"
                 />
+
+                <p id="error-participants" style="display: none; color: red; margin-top: 5px;"></p>
+
+
               </div>
             </div>
             <div class="form-group-mountain">
@@ -381,6 +409,8 @@
             <button type="submit" class="btn-submit-mountain">
               <i class="fas fa-check-circle"></i> Gửi Yêu Cầu
             </button>
+
+            
           </form>
         </section>
 
@@ -481,5 +511,8 @@
         </div>
       </div>
     </footer>
+    
+  
+  
   </body>
 </html>

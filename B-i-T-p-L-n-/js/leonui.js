@@ -11,25 +11,80 @@ document.addEventListener("DOMContentLoaded", function () {
         const duration = document.getElementById("duration").value.trim();
         const participants = document.getElementById("participants").value.trim();
 
-        
-        if (!name || !email || !destination || !phone || !duration || !participants) {
-            alert("Vui lòng điền đầy đủ thông tin");
-            return;
+        function showError(id, message) {
+             const errorElement = document.getElementById(`error-${id}`);
+             errorElement.textContent = message;
+             errorElement.style.display = "block";
         }
+
+        function clearError(id) {
+            const errorElement = document.getElementById(`error-${id}`);
+            if (errorElement) {
+                errorElement.textContent = "";
+                errorElement.style.display = "none";
+            }
+        }
+
+        
+
+
+        let hasError = false;
+        ["name", "email", "destination", "phone", "duration", "participants"].forEach(clearError);
+
+        ["name", "email", "destination", "phone", "duration", "participants"].forEach(function(id) {        
+            const value = document.getElementById(id).value.trim();
+            if (!value) {
+                showError(id, "Vui lòng điền đầy đủ thông tin");
+                hasError = true;
+            }
+        });
+        
+        if (hasError) return;
+
+
+
+        // let hasError = false;
+        // if (!name || !email || !destination || !phone || !duration || !participants) {
+        //     showError("Vui lòng điền đầy đủ thông tin");
+        //     hasError = true;
+        // }
+
+        
+        
 
         const phoneRegex = /^0\d{9}$/;
         if (!phoneRegex.test(phone)) {
-            alert("Số điện thoại không hợp lệ");
+            showError("phone", "Số điện thoại không hợp lệ");
             return;
         }
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
-            alert("Email không hợp lệ.");
+            showError("email", "Email không hợp lệ");
             return;
         }
 
-        alert("Cảm ơn bạn đã gửi yêu cầu! Travel Tour sẽ liên hệ sớm nhất.");
+        
+
+
+        const successMessage = document.getElementById("success-message");
+        successMessage.style.display = "block";
+
+        setTimeout(() => {
+        successMessage.style.display = "none";
+        }, 5000);
+
+
         form.reset();   
     });
 });
+
+
+
+
+
+
+
+  
+
+ 
